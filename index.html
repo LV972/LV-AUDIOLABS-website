@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LV AUDIO LABS 🔊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0a0a;
+    --bg-raised: #151313;
+    --red: #d61f3c;
+    --red-deep: #7a0f1f;
+    --cream: #f2ede7;
+    --grey: #8f8880;
+    --line: #2a2626;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.5;
+  }
+  h1, h2, h3, .display{
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  a{ color: inherit; }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav{
+    position: sticky; top:0; z-index: 10;
+    background: rgba(11,10,10,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .logo{ font-family:'Archivo Black'; font-size: 1.1rem; }
+  .logo span{ color: var(--red); }
+  nav .links{ display:flex; gap: 28px; font-size: 0.92rem; }
+  nav .links a{ text-decoration:none; color: var(--grey); transition: color .15s; }
+  nav .links a:hover{ color: var(--cream); }
+  .btn{
+    display:inline-block;
+    padding: 12px 26px;
+    background: var(--red);
+    color: #fff;
+    text-decoration:none;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    cursor:pointer;
+    font-size: 0.95rem;
+    transition: background .15s, transform .1s;
+  }
+  .btn:hover{ background: #b8172f; }
+  .btn:active{ transform: scale(0.98); }
+  .btn-ghost{
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--cream);
+  }
+  .btn-ghost:hover{ background: var(--bg-raised); border-color:#3a3535; }
+
+  /* HERO */
+  header.hero{
+    padding: 110px 0 90px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .bars{
+    position:absolute; right: -60px; top: 50%; transform: translateY(-50%);
+    display:flex; align-items:flex-end; gap:6px; height: 260px; opacity: 0.5;
+  }
+  .bars span{
+    display:block; width: 10px; background: linear-gradient(180deg, var(--red), var(--red-deep));
+    border-radius: 2px 2px 0 0;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%, 100% { transform: scaleY(0.4); }
+    50% { transform: scaleY(1); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bars span{ animation: none; }
+  }
+  .hero-content{ max-width: 640px; position: relative; z-index:1; }
+  .eyebrow{ color: var(--red); font-weight:600; font-size:0.9rem; margin-bottom: 18px; }
+  h1{ font-size: clamp(2.4rem, 5vw, 3.6rem); margin-bottom: 22px; }
+  .hero p.lead{ color: var(--grey); font-size: 1.15rem; max-width: 480px; margin-bottom: 34px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .hero-meta{ margin-top: 24px; font-size: 0.85rem; color: var(--grey); }
+
+  /* SECTIONS */
+  section{ padding: 90px 0; border-bottom: 1px solid var(--line); }
+  section.no-border{ border-bottom:none; }
+  .section-head{ max-width: 560px; margin-bottom: 52px; }
+  .section-head .eyebrow{ margin-bottom: 12px; }
+  .section-head h2{ font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin-bottom: 14px; }
+  .section-head p{ color: var(--grey); font-size: 1.05rem; }
+
+  /* FEATURES */
+  .features{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border:1px solid var(--line); }
+  .feature{ background: var(--bg); padding: 32px 28px; }
+  .feature h3{ font-size: 1.02rem; margin-bottom: 12px; text-transform:none; letter-spacing:0; }
+  .feature p{ color: var(--grey); font-size: 0.95rem; }
+  .feature .num{ color: var(--red); font-family:'Archivo Black'; font-size:0.85rem; display:block; margin-bottom:16px; }
+
+  /* PRICING */
+  .pricing-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .plan{
+    border: 1px solid var(--line);
+    padding: 36px 32px;
+    background: var(--bg-raised);
+    display:flex; flex-direction:column;
+  }
+  .plan.pro{ border-color: var(--red); position:relative; }
+  .plan-name{ font-size: 0.85rem; color: var(--grey); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom: 10px; }
+  .plan.pro .plan-name{ color: var(--red); }
+  .price{ font-family:'Archivo Black'; font-size: 2.6rem; margin-bottom: 4px; }
+  .price small{ font-family:'Work Sans'; font-size: 1rem; color: var(--grey); font-weight:500; text-transform:none; }
+  .plan-desc{ color: var(--grey); font-size: 0.92rem; margin-bottom: 26px; }
+  .plan ul{ list-style:none; margin-bottom: 30px; flex-grow:1; }
+  .plan li{ padding: 9px 0; border-top: 1px solid var(--line); font-size: 0.95rem; display:flex; gap:10px; }
+  .plan li:first-child{ border-top:none; }
+  .check{ color: var(--red); font-weight:700; }
+
+  /* DOWNLOAD CTA */
+  .cta-box{
+    background: linear-gradient(135deg, var(--red-deep), #4a0a15);
+    padding: 56px 48px;
+    display:flex; align-items:center; justify-content:space-between; gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-box h2{ font-size: 1.8rem; margin-bottom:10px; }
+  .cta-box p{ color: rgba(242,237,231,0.75); max-width: 420px; }
+  .cta-box .btn{ background: var(--cream); color: var(--bg); white-space:nowrap; }
+  .cta-box .btn:hover{ background:#fff; }
+
+  footer{ padding: 40px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer p{ color: var(--grey); font-size: 0.85rem; }
+
+  @media (max-width: 760px){
+    .features{ grid-template-columns: 1fr; }
+    .pricing-grid{ grid-template-columns: 1fr; }
+    .bars{ display:none; }
+    .cta-box{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">LV AUDIO LABS <span>🔊</span></div>
+    <div class="links">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#telecharger">Télécharger</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="bars" aria-hidden="true">
+    <span style="height:40%; animation-delay:0s"></span>
+    <span style="height:70%; animation-delay:.15s"></span>
+    <span style="height:50%; animation-delay:.3s"></span>
+    <span style="height:90%; animation-delay:.45s"></span>
+    <span style="height:60%; animation-delay:.6s"></span>
+    <span style="height:75%; animation-delay:.75s"></span>
+    <span style="height:45%; animation-delay:.9s"></span>
+  </div>
+  <div class="wrap hero-content">
+    <div class="eyebrow">Logiciel d'analyse audio pour DJ</div>
+    <h1>Connais chaque morceau avant de le poser.</h1>
+    <p class="lead">BPM, tonalité et séparation de stems en un clic. LV AUDIO LABS classe ta bibliothèque pendant que tu prépares ton prochain mix.</p>
+    <div class="hero-actions">
+      <a href="#telecharger" class="btn">Télécharger gratuitement</a>
+      <a href="#fonctionnalites" class="btn btn-ghost">Voir les fonctionnalités</a>
+    </div>
+    <div class="hero-meta">Windows · Version 1.0 · Gratuit pour commencer</div>
+  </div>
+</header>
+
+<section id="fonctionnalites">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Fonctionnalités</div>
+      <h2>Tout ce qu'il faut pour préparer un set</h2>
+      <p>Un seul logiciel pour analyser, séparer et ranger tes morceaux.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <span class="num">Analyse</span>
+        <h3>Détection BPM & tonalité</h3>
+        <p>Analyse automatique du tempo et de la tonalité de chaque morceau, avec lecture prioritaire des métadonnées existantes.</p>
+      </div>
+      <div class="feature">
+        <span class="num">Séparation</span>
+        <h3>Séparation voix / instrumental</h3>
+        <p>Isole la voix et l'instrumental de n'importe quel morceau, exportables en WAV, MP3 ou FLAC.</p>
+      </div>
+      <div class="feature">
+        <span class="num">Organisation</span>
+        <h3>Bibliothèque classée automatiquement</h3>
+        <p>Renommage automatique avec le BPM détecté, historique consultable et recherche instantanée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tarifs</div>
+      <h2>Commence gratuitement</h2>
+      <p>Passe en illimité quand tu en as besoin.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan">
+        <div class="plan-name">Gratuit</div>
+        <div class="price">0€</div>
+        <div class="plan-desc">Pour découvrir le logiciel et l'utiliser occasionnellement.</div>
+        <ul>
+          <li><span class="check">✓</span> 5 séparations voix/instru par 24h</li>
+          <li><span class="check">✓</span> Analyses BPM illimitées</li>
+          <li><span class="check">✓</span> Détection de tonalité</li>
+          <li><span class="check">✓</span> Historique de base</li>
+        </ul>
+        <a href="#telecharger" class="btn btn-ghost">Télécharger</a>
+      </div>
+      <div class="plan pro">
+        <div class="plan-name">Pro</div>
+        <div class="price">4,99€ <small>/ mois</small></div>
+        <div class="plan-desc">Pour un usage régulier, sans limite.</div>
+        <ul>
+          <li><span class="check">✓</span> Séparations illimitées</li>
+          <li><span class="check">✓</span> Analyses BPM illimitées</li>
+          <li><span class="check">✓</span> Traitement par lot d'un dossier entier</li>
+          <li><span class="check">✓</span> Export WAV / MP3 / FLAC</li>
+          <li><span class="check">✓</span> Support prioritaire</li>
+        </ul>
+        <a href="#" class="btn">Passer en Pro</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="telecharger" class="no-border">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2>Prêt à tester LV AUDIO LABS ?</h2>
+        <p>Téléchargement direct, aucune carte bancaire requise pour la version gratuite.</p>
+      </div>
+      <a href="#" class="btn">Télécharger pour Windows</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:0.95rem">LV AUDIO LABS <span>🔊</span></div>
+    <p>© 2026 LV AUDIO LABS</p>
+  </div>
+</footer>
+
+</body>
+</html>
