@@ -10,6 +10,9 @@ This repository hosts the website and download page for LV AUDIO LABS. Built wit
 - **Key detection** — automatic key/tonality analysis
 - **Vocal/instrumental separation** — isolate vocals and instrumental from any track, export as WAV, MP3, or FLAC
 - **Auto-organized library** — files renamed automatically with detected BPM, searchable history
+- **Advanced Workflow Tracking** — visual progress indicators (Separation → Analysis → Finalization) for real-time tracking
+- **Custom Export Paths** — full control over where your stems are saved via settings
+- **Robust Engine** — improved FFmpeg integration for seamless audio processing
 
 ## Plans
 
