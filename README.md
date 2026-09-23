@@ -5,7 +5,6 @@ Audio analysis tool for DJs — BPM detection, key detection, and vocal/instrume
 This repository hosts the website and download page for LV AUDIO LABS. Built with plain HTML/CSS.
 
 ## Features
-https://github.com/LV972/LV-AUDIOLABS-website/releases/latest/download/LV-AUDIOLABS-Setup.exe
 - **BPM detection** — automatic tempo analysis, with priority given to existing file metadata
 - **Key detection** — automatic key/tonality analysis
 - **Vocal/instrumental separation** — isolate vocals and instrumental from any track, export as WAV, MP3, or FLAC
