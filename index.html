@@ -44,7 +44,7 @@
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
   .logo{ font-family:'Archivo Black'; font-size: 1.1rem; }
   .logo span{ color: var(--red); }
-  nav .links{ display:flex; gap: 28px; font-size: 0.92rem; }
+  nav .links{ display:flex; gap: 22px; font-size: 0.9rem; flex-wrap: wrap; }
   nav .links a{ text-decoration:none; color: var(--grey); transition: color .15s; }
   nav .links a:hover{ color: var(--cream); }
   .btn{
@@ -145,9 +145,13 @@
   .cta-box .btn{ background: var(--cream); color: var(--bg); white-space:nowrap; }
   .cta-box .btn:hover{ background:#fff; }
  
-  footer{ padding: 40px 0; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer{ padding: 32px 0 44px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; }
   footer p{ color: var(--grey); font-size: 0.85rem; }
+  .legal-links{ display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end; }
+  .legal-links a{ color: var(--grey); font-size:0.82rem; text-decoration:none; }
+  .legal-links a:hover, .legal-links a:focus{ color: var(--cream); text-decoration:underline; }
+  .cookie-note{ margin: 0; max-width: 660px; }
  
   @media (max-width: 760px){
     .features{ grid-template-columns: 1fr; }
@@ -165,6 +169,7 @@
     <div class="links">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#tarifs">Tarifs</a>
+      <a href="mentions-legales.html">Mentions légales</a>
       <a href="#telecharger">Télécharger</a>
     </div>
   </div>
@@ -188,7 +193,7 @@
       <a href="#telecharger" class="btn">Télécharger gratuitement</a>
       <a href="#fonctionnalites" class="btn btn-ghost">Voir les fonctionnalités</a>
     </div>
-    <div class="hero-meta">Windows · Version 1.0 · Gratuit pour commencer</div>
+    <div class="hero-meta">Windows · Version 1.1 · Gratuit pour commencer</div>
   </div>
 </header>
  
@@ -261,19 +266,28 @@
     <div class="cta-box">
       <div>
         <h2>Prêt à tester LV AUDIO LABS ?</h2>
-        <p>Téléchargement direct, aucune carte bancaire requise pour la version gratuite.</p>
+        <p>Version 1.1 pour Windows. Téléchargement direct, sans carte bancaire.</p>
       </div>
-      <a href="https://github.com/LV972/LV-AUDIOLABS-website/releases/download/v1.0.0/LV-AUDIOLABS-Setup.exe" class="btn">Télécharger pour Windows</a>
+      <a href="https://github.com/LV972/LV-AUDIOLABS-website/releases/download/v1.1.0/LV-AUDIOLABS-v1.1.0.exe" class="btn" download>Télécharger LV-AUDIOLABS v1.1</a>
     </div>
   </div>
 </section>
  
 <footer>
   <div class="wrap">
-    <div class="logo" style="font-size:0.95rem">LV AUDIO LABS <span>🔊</span></div>
+    <div>
+      <p class="cookie-note">Les fichiers audio et réglages sont traités sur ton ordinateur. Ce site utilise un stockage local pour mémoriser ton choix de consentement.</p>
+      <nav class="legal-links" aria-label="Informations légales">
+        <a href="cgu.html">CGU</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+        <a href="politique-cookies.html">Cookies</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+    </div>
     <p>© 2026 LV AUDIO LABS</p>
   </div>
 </footer>
  
+<script src="cookie-consent.js" defer></script>
 </body>
 </html>
