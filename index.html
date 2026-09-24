@@ -153,6 +153,27 @@
   .legal-links a:hover, .legal-links a:focus{ color: var(--cream); text-decoration:underline; }
   .cookie-note{ margin: 0; max-width: 660px; }
  
+  /* MON COMPTE (Firebase : plan + quotas partagés avec le logiciel) */
+  .account-card{
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px;
+    max-width: 640px;
+  }
+  .account-status{ display:flex; align-items:center; gap:10px; font-weight:600; margin-bottom:6px; }
+  .account-status .dot{ width:9px; height:9px; border-radius:50%; background: var(--grey); display:inline-block; }
+  .account-email{ color: var(--grey); font-size:0.9rem; margin-bottom:20px; }
+  .account-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:22px; }
+  .account-label{
+    display:block; color: var(--grey); font-size:0.78rem;
+    text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;
+  }
+  .account-grid strong{ font-size:1.1rem; }
+  .account-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+  .account-actions .btn:disabled{ opacity:.55; cursor:default; }
+  .account-note{ color: var(--grey); font-size:0.82rem; }
+
   @media (max-width: 760px){
     .features{ grid-template-columns: 1fr; }
     .pricing-grid{ grid-template-columns: 1fr; }
@@ -169,6 +190,7 @@
     <div class="links">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#tarifs">Tarifs</a>
+      <a href="#compte">Mon compte</a>
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="#telecharger">Télécharger</a>
     </div>
@@ -193,7 +215,7 @@
       <a href="#telecharger" class="btn">Télécharger gratuitement</a>
       <a href="#fonctionnalites" class="btn btn-ghost">Voir les fonctionnalités</a>
     </div>
-    <div class="hero-meta">Windows · Version 1.1.1 · Gratuit pour commencer</div>
+    <div class="hero-meta">Windows · Version 1.0.0 · Gratuit pour commencer</div>
   </div>
 </header>
  
@@ -261,14 +283,51 @@
   </div>
 </section>
  
+<section id="compte">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mon compte</div>
+      <h2>Ton plan, synchronisé partout</h2>
+      <p>Connecte-toi avec Google : le logiciel et ce site partagent le même compte, le même plan et le même compteur de séparations.</p>
+    </div>
+
+    <div class="account-card">
+      <div class="account-status">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="compte-statut">Chargement…</span>
+      </div>
+      <p id="compte-email" class="account-email"></p>
+
+      <div class="account-grid">
+        <div>
+          <span class="account-label">Plan</span>
+          <strong id="compte-plan">—</strong>
+        </div>
+        <div>
+          <span class="account-label">Séparations</span>
+          <strong id="compte-quota">—</strong>
+        </div>
+      </div>
+
+      <div class="account-actions">
+        <button type="button" class="btn" id="btn-connexion-google">Se connecter avec Google</button>
+        <button type="button" class="btn btn-ghost" id="btn-deconnexion" hidden>Se déconnecter</button>
+      </div>
+
+      <p class="account-note">Les 5 séparations gratuites se renouvellent en continu sur 24 h, exactement de la même manière dans le logiciel et sur ce site.</p>
+    </div>
+  </div>
+</section>
+
 <section id="telecharger" class="no-border">
   <div class="wrap">
     <div class="cta-box">
       <div>
         <h2>Prêt à tester LV AUDIO LABS ?</h2>
-        <p>Version 1.1.1 pour Windows. L’installateur inclut FFmpeg : aucune installation supplémentaire n’est nécessaire.</p>
+        <p>Version 1.0.0 pour Windows. L’installateur inclut FFmpeg : aucune installation supplémentaire n’est nécessaire.</p>
       </div>
-      <a href="https://github.com/LV972/LV-AUDIOLABS-website/releases/latest/download/LV-AUDIOLABS-Setup-v1.1.1.exe" class="btn" download>Télécharger l’installateur LV-AUDIOLABS v1.1.1</a>
+
+      <a href="https://github.com/LV972/LV-AUDIOLABS-website/releases/download/v1.0.0/LV-AUDIOLABS-Setup-v1.0.0.exe" class="btn" download>Télécharger l’installateur LV AUDIO LABS v1.0.0</a>
     </div>
   </div>
 </section>
@@ -289,5 +348,6 @@
 </footer>
  
 <script src="cookie-consent.js" defer></script>
+<script type="module" src="compte.js"></script>
 </body>
 </html>

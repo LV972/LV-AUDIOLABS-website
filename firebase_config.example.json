@@ -1,0 +1,9 @@
+{
+  "__doc__": "Copie ce fichier en firebase_config.json (meme nom, sans __doc__) et remplis les 4 valeurs du projet Firebase. Ce sont les memes valeurs que l'application de bureau : les deux partagent donc le meme compte et les memes quotas. Aucun secret ici : la cle API et le clientId sont publics par nature (Firebase les expose au navigateur).",
+  "apiKey": "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "authDomain": "TON-PROJET.firebaseapp.com",
+  "projectId": "TON-PROJET",
+  "appId": "1:000000000000:web:xxxxxxxxxxxxxxxxxxxxxxxx",
+  "clientId": "000000000000-XXXXXXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com",
+  "limite_free_24h": 5
+}
