@@ -1,0 +1,44 @@
+/* Polices LV AUDIO LABS hébergées localement (auto-hébergement).
+ *
+ * Les fichiers .woff2 doivent être placés dans website/fonts/ :
+ *   archivo-black-400.woff2  et  work-sans-400.woff2 / work-sans-600.woff2
+ * Téléchargement manuel (SIL Open Font License 1.1) :
+ *   https://fonts.google.com/specimen/Archivo+Black   → Download
+ *   https://fonts.google.com/specimen/Work+Sans       → Download
+ * puis décompresser et copier les .woff2 dans website/fonts/.
+ *
+ * Cela évite tout appel à Google Fonts (tiers) : les polices sont servies
+ * depuis le même domaine que le site.
+ */
+
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/archivo-black-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/work-sans-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/work-sans-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/work-sans-700.woff2") format("woff2");
+}
