@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon compte â€” LV AUDIO LABS</title>
+    <title>Mon compte — LV AUDIO LABS</title>
             <link rel="stylesheet" href="fonts.css">
     <style>
         :root {
@@ -69,85 +69,85 @@
 </head>
 <body>
     <div class="wrap">
-        <a href="index.html" class="back-link">â† Retour Ã  l'accueil</a>
+        <a href="index.html" class="back-link">← Retour à l'accueil</a>
         <h1>Mon compte</h1>
 
         <div class="account-card">
             <div class="account-status">
                 <span class="dot" aria-hidden="true"></span>
-                <span id="compte-statut">Chargementâ€¦</span>
+                <span id="compte-statut">Chargement…</span>
             </div>
             <p id="compte-email" class="account-email"></p>
 
             <div class="account-grid">
                 <div>
                     <span class="account-label">Plan</span>
-                    <strong id="compte-plan">â€”</strong>
+                    <strong id="compte-plan">—</strong>
                 </div>
                 <div>
-                    <span class="account-label">SÃ©parations</span>
-                    <strong id="compte-quota">â€”</strong>
+                    <span class="account-label">Séparations</span>
+                    <strong id="compte-quota">—</strong>
                 </div>
             </div>
 
             <div class="account-actions">
                 <button type="button" class="btn" id="btn-connexion-google">Se connecter avec Google</button>
-                <button type="button" class="btn btn-ghost" id="btn-deconnexion" hidden>Se dÃ©connecter</button>
+                <button type="button" class="btn btn-ghost" id="btn-deconnexion" hidden>Se déconnecter</button>
             </div>
 
             <p class="account-note">
-                Ton abonnement est rÃ©siliable Ã  tout moment, sans frais et sans justificatif,
-                directement depuis le bouton Â« GÃ©rer / RÃ©silier mon abonnement Â» (article L. 215-1-1 du Code de la consommation).
+                Ton abonnement est résiliable à tout moment, sans frais et sans justificatif,
+                directement depuis le bouton « Gérer / Résilier mon abonnement » (article L. 215-1-1 du Code de la consommation).
             </p>
         </div>
 
         <section id="retractation-form" aria-labelledby="retractation-title" hidden
                  style="background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
-            <h2 id="retractation-title" style="margin-top: 0; border: none; color: var(--red);">Exercer votre droit de rÃ©tractation</h2>
+            <h2 id="retractation-title" style="margin-top: 0; border: none; color: var(--red);">Exercer votre droit de rétractation</h2>
             <p>
-                ConformÃ©ment Ã  l'article L. 221-18 du Code de la consommation, vous disposez de
-                <strong>14 jours calendaires</strong> Ã  compter de la souscription pour vous rÃ©tracter,
-                sans avoir Ã  justifier de motif. La fonctionnalitÃ© ci-dessous respecte le
-                dÃ©cret nÂ° 2026-3 (article D. 221-5) : elle est gratuite, directement accessible et
-                vous adresse un accusÃ© de rÃ©ception horodatÃ©.
+                Conformément à l'article L. 221-18 du Code de la consommation, vous disposez de
+                <strong>14 jours calendaires</strong> à compter de la souscription pour vous rétracter,
+                sans avoir à justifier de motif. La fonctionnalité ci-dessous respecte le
+                décret n° 2026-3 (article D. 221-5) : elle est gratuite, directement accessible et
+                vous adresse un accusé de réception horodaté.
             </p>
             <p>
-                <strong>Attention :</strong> si vous avez demandÃ© l'exÃ©cution immÃ©diate du service Pro
-                (accÃ¨s illimitÃ© aux sÃ©parations) et renoncÃ© expressÃ©ment Ã  votre droit de rÃ©tractation
-                lors de la souscription (case Ã  cocher), ce droit ne peut plus Ãªtre exercÃ©
-                (article L. 221-28 13Â°).
+                <strong>Attention :</strong> si vous avez demandé l'exécution immédiate du service Pro
+                (accès illimité aux séparations) et renoncé expressément à votre droit de rétractation
+                lors de la souscription (case à cocher), ce droit ne peut plus être exercé
+                (article L. 221-28 13°).
             </p>
             <form id="form-retractation" style="display: flex; flex-direction: column; gap: 16px;">
                 <div>
-                    <label for="retractation-email" style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--cream);">Votre adresse e-mail (celle du compte Google connectÃ©)</label>
+                    <label for="retractation-email" style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--cream);">Votre adresse e-mail (celle du compte Google connecté)</label>
                     <input type="email" id="retractation-email" name="email" required class="champ">
                 </div>
                 <div>
                     <label for="retractation-uid" style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--cream);">Identifiant utilisateur (UID Firebase)</label>
                     <input type="text" id="retractation-uid" name="uid" required readonly class="champ">
-                    <small style="color: var(--grey);">Ce champ est rempli automatiquement si tu es connectÃ©.</small>
+                    <small style="color: var(--grey);">Ce champ est rempli automatiquement si tu es connecté.</small>
                 </div>
                 <div>
-                    <label for="retractation-moyen" style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--cream);">Moyen de rÃ©ception de l'accusÃ© de rÃ©ception</label>
+                    <label for="retractation-moyen" style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--cream);">Moyen de réception de l'accusé de réception</label>
                     <select id="retractation-moyen" name="moyen" required class="champ">
-                        <option value="email">E-mail (recommandÃ©)</option>
+                        <option value="email">E-mail (recommandé)</option>
                         <option value="courrier">Courrier postal</option>
                     </select>
                 </div>
-                <button type="submit" class="btn">Confirmer la rÃ©tractation</button>
+                <button type="submit" class="btn">Confirmer la rétractation</button>
             </form>
             <p id="retractation-message" style="margin-top: 16px; min-height: 1.2em; color: var(--grey);"></p>
         </section>
 
         <footer>
-            <nav class="legal-links" aria-label="Informations lÃ©gales">
+            <nav class="legal-links" aria-label="Informations légales">
                 <a href="cgu.html">CGU</a>
                 <a href="cgv.html">CGV</a>
-                <a href="politique-confidentialite.html">ConfidentialitÃ©</a>
+                <a href="politique-confidentialite.html">Confidentialité</a>
                 <a href="politique-cookies.html">Cookies</a>
-                <a href="mentions-legales.html">Mentions lÃ©gales</a>
+                <a href="mentions-legales.html">Mentions légales</a>
             </nav>
-            <p style="font-size: 0.85rem;">Â© 2026 LV AUDIO LABS</p>
+            <p style="font-size: 0.85rem;">© 2026 LV AUDIO LABS</p>
         </footer>
     </div>
 
