@@ -32,7 +32,7 @@
             timestamp: Date.now()
         }));
         
-        // Dispatch event for other scripts to react (like Google Fonts loader)
+        // Dispatch event for other scripts to react
         window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: consent }));
         
         // Hide banner
@@ -56,7 +56,7 @@
             <div style="display: flex; flex-direction: column; gap: 16px;">
                 <div style="font-size: 0.95rem; line-height: 1.5;">
                     <strong>Cookies et confidentialité</strong><br>
-                    Nous utilisons des cookies strictement nécessaires au fonctionnement du site et, avec votre accord, des services tiers comme Google Fonts. 
+                    Les polices d'écriture sont hébergées directement sur notre domaine : aucune donnée n'est transmise à Google ou à un tiers. Seul votre choix de consentement est enregistré localement dans votre navigateur.
                     <a href="politique-cookies.html" style="color: #d61f3c; text-decoration: underline;">En savoir plus</a>.
                 </div>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
